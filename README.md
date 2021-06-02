@@ -7,6 +7,15 @@ What does
 ```
 even mean? I for one didn't study enough English to understand that!
 But worry no more! 
+
+Just get a DeepL auth key and export it as follows:
+
+```sh
+export DEEPL_AUTH_KEY="your-api-token"
+```
+
+This gem currently hardcodes the free DeepL servers. # TODO 
+
 Now you can translate it to your language of chose with this gem!
 ```ruby
 "hello world".translate_to_ja

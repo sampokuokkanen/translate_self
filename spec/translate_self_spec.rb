@@ -1,5 +1,4 @@
 RSpec.describe TranslateSelf do
-
   before(:each) do
     @hello = 'hello'
   end
@@ -30,16 +29,16 @@ RSpec.describe TranslateSelf do
   # It sometimes returns こんにちわ...
   it 'uses the language set when translating' do
     @hello.to_language = 'ja'
-    expect(@hello.translate).to match /こんにち/
+    expect(@hello.translate).to match(/こんにち/)
   end
 
   it 'changes the value of the string itself when used with bang' do
     @hello.to_language = 'ja'
     @hello.translate!
-    expect(@hello).to match /こんにち/
+    expect(@hello).to match(/こんにち/)
   end
 
   it 'does something useful' do
-    expect(@hello.translate_to_ja).to match /こんにち/
+    expect(@hello.translate_to_ja).to match(/こんにち/)
   end
 end

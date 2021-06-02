@@ -9,10 +9,11 @@ Gem::Specification.new do |spec|
   spec.email         = ['sampo.kuokkanen@gmail.com']
 
   spec.summary       = 'TranslateSelf lets strings translate themselves. '
-  spec.description   = 'Let the strings do the job for you. No need to do any of the manual work! The strings translate themselves!!'
+  spec.description   = 'Let the strings do the job for you. No need to do any of the manual work! \
+                        The strings translate themselves!! Translate to Japanese, English, Finnish...'
   spec.homepage      = 'https://github.com/sampokuokkanen/rails_material_design_icons'
   spec.license       = 'MIT'
-  spec.required_ruby_version = Gem::Requirement.new('>= 2.4.0')
+  spec.required_ruby_version = Gem::Requirement.new('>= 2.5.0')
 
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['source_code_uri'] = spec.homepage
@@ -27,7 +28,10 @@ Gem::Specification.new do |spec|
   spec.require_paths = ['lib']
 
   # Uncomment to register a new dependency of your gem
-  spec.add_dependency "deepl-rb"
+  spec.add_dependency 'deepl-rb'
+  spec.add_development_dependency 'rake', '~> 13.0'
+  spec.add_development_dependency 'rspec', '~> 3.2'
+  spec.add_development_dependency 'rubocop', '~> 1.7'
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
