@@ -11,7 +11,7 @@ Gem::Specification.new do |spec|
   spec.summary       = 'TranslateSelf lets strings translate themselves. '
   spec.description   = 'Let the strings do the job for you. No need to do any of the manual work! \
                         The strings translate themselves!! Translate to Japanese, English, Finnish...'
-  spec.homepage      = 'https://github.com/sampokuokkanen/rails_material_design_icons'
+  spec.homepage      = 'https://github.com/sampokuokkanen/translate_self'
   spec.license       = 'MIT'
   spec.required_ruby_version = Gem::Requirement.new('>= 2.5.0')
 
