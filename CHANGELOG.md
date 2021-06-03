@@ -8,4 +8,9 @@ You can now translate strings! Be free!
 
 ## [0.2.0] - 2021-06-03
 
-- Commentation and cleanup of unneeded files. ****
+- Commentation and cleanup of unneeded files.
+
+## [0.3.0] - 2021-06-03
+
+- Gemfile.lock was not automatically updated, testing it a bit.
+
