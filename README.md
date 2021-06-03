@@ -1,5 +1,8 @@
 # TranslateSelf
 
+[![Gem Version](http://img.shields.io/gem/v/translate_self.svg)](https://rubygems.org/gems/translate_self)
+[![Gem Downloads](https://img.shields.io/gem/dt/translate_self.svg)](https://rubygems.org/gems/translate_self)
+
 Strings in Ruby are a bit hard to understand if you're not an English speaker. 
 What does 
 ```ruby
