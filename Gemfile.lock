@@ -2,6 +2,7 @@ PATH
   remote: .
   specs:
     translate_self (0.1.0)
+      deepl-rb
 
 GEM
   remote: https://rubygems.org/
@@ -49,7 +50,6 @@ PLATFORMS
 
 DEPENDENCIES
   byebug
-  deepl-rb
   rake (~> 13.0)
   rspec (~> 3.0)
   rubocop (~> 1.7)
