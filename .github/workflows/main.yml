@@ -2,12 +2,13 @@ name: Ruby
 
 on: [push,pull_request]
 
+env:
+  DEEPL_AUTH_KEY: ${{ secrets.DEEPL_AUTH_KEY }}
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    - env:
-        DEEPL_AUTH_KEY: ${{ secrets.DEEPL_AUTH_KEY }}
     - uses: actions/checkout@v2
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
