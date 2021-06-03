@@ -8,6 +8,8 @@ What does
 even mean? I for one didn't study enough English to understand that!
 But worry no more! 
 
+[![asciicast](https://asciinema.org/a/TJU6H5iPopKrUwqwYnLUX3Y2o.svg)](https://asciinema.org/a/TJU6H5iPopKrUwqwYnLUX3Y2o)
+
 Just get a DeepL auth key and export it as follows:
 
 ```sh
