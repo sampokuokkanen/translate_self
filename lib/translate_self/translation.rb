@@ -52,6 +52,8 @@ module Translation
 
     response = DeepL.translate text, language, to_lan
     self.language = response.detected_source_language.downcase if self.language.nil?
-    response.text
+    actual_translation = response.text
+    actual_translation.language = to_lan
+    actual_translation
   end
 end

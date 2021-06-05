@@ -24,6 +24,7 @@ RSpec.describe TranslateSelf do
     finn = suomalainen.translate_to_en
     expect(suomalainen.language).to eq 'fi'
     expect(finn).to eq 'I am a Finn'
+    expect(finn.language).to eq 'en'
   end
 
   # It sometimes returns こんにちわ...
