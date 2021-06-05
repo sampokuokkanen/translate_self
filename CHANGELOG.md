@@ -15,3 +15,6 @@ You can now translate strings! Be free!
 - Gemfile.lock was not automatically updated, testing it a bit.
 Seems like you need to update it by hand! 
 
+## [0.4.0] - 2021-06-05
+
+- The translated new string now knows what language it is. 
