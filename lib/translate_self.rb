@@ -1,5 +1,6 @@
 require_relative 'translate_self/version'
 require_relative 'translate_self/translation'
+require_relative 'translate_self/translatable_string'
 require 'ext/string'
 require 'deepl'
 

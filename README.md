@@ -77,9 +77,20 @@ finn.translate
 # I am a Finn
 ```
 
-## Beware!
+## Using with `# frozen_string_literal: true`
 
-Does not work if you freeze the strings. 
+~~Does not work if you freeze the strings.~~ 
+
+Now it does! 
+Just use the classes `TranslatableString` (aliased to `TString`). 
+So even if you have a magic comment making all your strings frozen, 
+you can still use the `translate` method like below:
+
+```ruby
+hello = TranslatableString.new('hello', language: 'en', to_language: 'fi')
+hello.translate
+# "Moi"
+```
 
 ## Development
 
