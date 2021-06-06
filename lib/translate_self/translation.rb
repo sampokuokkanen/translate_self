@@ -51,9 +51,7 @@ module Translation
     warn 'No language given!' and return if to_lan.nil?
 
     response = DeepL.translate text, language, to_lan
-    if self.language.nil? && !self.frozen?
-      self.language = response.detected_source_language.downcase
-    end
+    self.language = response.detected_source_language.downcase if self.language.nil? && !frozen?
     actual_translation = response.text
     actual_translation.language = to_lan
     actual_translation
