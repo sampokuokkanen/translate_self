@@ -18,3 +18,8 @@ Seems like you need to update it by hand!
 ## [0.4.0] - 2021-06-05
 
 - The translated new string now knows what language it is. 
+
+## [0.5.0] - 2021-06-06
+
+- Add TranslatableString class to work around frozen string literal magic comment. 
+  Also will not crash with frozen strings now. 
