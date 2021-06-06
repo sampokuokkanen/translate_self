@@ -92,6 +92,21 @@ hello.translate
 # "Moi"
 ```
 
+## Benchmark
+
+```shell
+C:\home\sampo\translate_self> ruby benchmark.rb
+Rehearsal -------------------------------------------------------
+normal string         0.252435   0.000000   0.252435 (  0.252490)
+translatable string   0.299736   0.000000   0.299736 (  0.299789)
+---------------------------------------------- total: 0.552171sec
+
+                          user     system      total        real
+normal string         0.237091   0.000000   0.237091 (  0.237091)
+translatable string   0.237607   0.000000   0.237607 (  0.237611)
+```
+So... the overhead might be surprisingly low!
+
 ## Development
 
 After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
