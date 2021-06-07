@@ -9,8 +9,8 @@ module TranslateSelf
   include Translation
   class Error < StandardError; end
   DeepL.configure do |config|
-    config.auth_key = ENV['DEEPL_HOST']
-    config.host = ENV['HOST'] || 'https://api-free.deepl.com'
+    config.auth_key = ENV['DEEPL_AUTH_KEY']
+    config.host = ENV['DEEPL_HOST'] || 'https://api-free.deepl.com' # Default value is 'https://api.deepl.com'
   end
   AVAILABLE_LANGUAGES = %w[bg cs da de el en es et fi fr hu it ja lt lv nl pl pt ro ru sk sl sv zh].freeze
 end

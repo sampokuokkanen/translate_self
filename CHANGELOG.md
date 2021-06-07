@@ -23,3 +23,7 @@ Seems like you need to update it by hand!
 
 - Add TranslatableString class to work around frozen string literal magic comment. 
   Also will not crash with frozen strings now. 
+
+## [0.6.0] - 2021-06-08
+
+- Add option to use ENV variable DEEPL_HOST
