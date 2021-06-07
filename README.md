@@ -19,7 +19,11 @@ Just get a DeepL auth key and export it as follows:
 export DEEPL_AUTH_KEY="your-api-token"
 ```
 
-This gem currently hardcodes the free DeepL servers. # TODO 
+By default this gem uses the free DeepL servers, but you can also configure your own:
+
+```sh
+export DEEPL_HOST="non-free-host"
+```
 
 Now you can translate it to your language of chose with this gem!
 ```ruby
@@ -93,6 +97,8 @@ hello.translate
 ```
 
 ## Benchmark
+
+Create a string 5000000 times. 
 
 ```shell
 C:\home\sampo\translate_self> ruby benchmark.rb
