@@ -34,7 +34,7 @@ Now you can translate it to your language of chose with this gem!
 What's even better is that you can also save some typing by using the shortened alias such as below:
 
 ```ruby
-"hello world".t_to_ja # or t_to_fi, t_to_ru... endless possibilities!
+"hello world".to_ja # or to_fi, to_ru... endless possibilities!
 # 世界よ、ハローだ
 ```
 
