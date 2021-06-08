@@ -3,7 +3,7 @@
 # freeze them. Aliased to TString.
 class TranslatableString < String
   def initialize(str, language: nil, to_language: nil)
-    replace str
+    super str
     self.language = language
     self.to_language = to_language
   end

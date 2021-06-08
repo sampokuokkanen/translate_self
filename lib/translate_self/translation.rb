@@ -2,10 +2,11 @@ require 'deepl'
 
 # The part where the actual translation happens.
 module Translation
+  @@languages = %w[bg cs da de el en es et fi fr hu it ja lt lv nl pl pt ro ru sk sl sv zh].freeze
   attr_accessor :language, :to_language
 
   def available_languages
-    TranslateSelf::AVAILABLE_LANGUAGES
+    @@languages
   end
 
   # Translates self to the desired language. \
@@ -39,7 +40,7 @@ module Translation
   #
   # @param [String] the language to translate to, e.g. "fi"
   # @return [String] the contents translated to another language
-  %w[bg cs da de el en es et fi fr hu it ja lt lv nl pl pt ro ru sk sl sv zh].each do |lan|
+  @@languages.each do |lan|
     define_method("translate_to_#{lan}") do |language = lan|
       call_deepl(self, self.language, language)
     end

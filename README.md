@@ -101,17 +101,22 @@ hello.translate
 Create a string 5000000 times. 
 
 ```shell
-C:\home\sampo\translate_self> ruby benchmark.rb
-Rehearsal -------------------------------------------------------
-normal string         0.252435   0.000000   0.252435 (  0.252490)
-translatable string   0.299736   0.000000   0.299736 (  0.299789)
----------------------------------------------- total: 0.552171sec
+C:\home\sampo\translate_self> ruby benchmark.rb 
+Rehearsal --------------------------------------------------------
+normal string          0.221517   0.000101   0.221618 (  0.221677)
+monkeypatched string   0.267748   0.000000   0.267748 (  0.267865)
+translatable string    1.878466   0.000000   1.878466 (  1.878497)
+----------------------------------------------- total: 2.367832sec
 
-                          user     system      total        real
-normal string         0.237091   0.000000   0.237091 (  0.237091)
-translatable string   0.237607   0.000000   0.237607 (  0.237611)
+                           user     system      total        real
+normal string          0.225292   0.000000   0.225292 (  0.225289)
+monkeypatched string   0.225690   0.000000   0.225690 (  0.225740)
+translatable string    1.886653   0.000000   1.886653 (  1.886735)
+
 ```
 So... the overhead might be surprisingly low!
+If you use the TranslatableString class, there is some overhead. 
+But if you just hack string it's pretty fast! See `benchmark.rb`.
 
 ## Development
 

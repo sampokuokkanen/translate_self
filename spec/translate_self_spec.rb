@@ -13,7 +13,7 @@ RSpec.describe TranslateSelf do
     end
 
     it 'can get a list of available languages' do
-      expect(@hello.available_languages).to eq TranslateSelf::AVAILABLE_LANGUAGES
+      expect(@hello.available_languages).to include 'fi'
     end
 
     it 'can translate hello to Finnish too' do
