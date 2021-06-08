@@ -21,7 +21,7 @@ RSpec.describe TranslateSelf do
     end
 
     it 'can use aliased method names' do
-      expect(@hello.t_to_fi).to eq 'Hei'
+      expect(@hello.to_fi).to eq 'Hei'
     end
 
     it 'recognizes a string as Finnish' do

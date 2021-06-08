@@ -35,3 +35,8 @@ Seems like you need to update it by hand!
 ## [0.8.0] - 2021-06-08
 
 - Add option to use the shorter `t_to_language_code` alias. 
+
+## [0.9.0] - 2021-06-08
+
+# Breaking change from 0.8!
+- `t_to_language_code` was too much typing, so changed it to `to_language_code`. 

@@ -44,7 +44,7 @@ module Translation
     define_method("translate_to_#{lan}") do |language = lan|
       call_deepl(self, self.language, language)
     end
-    alias_method "t_to_#{lan}", "translate_to_#{lan}"
+    alias_method "to_#{lan}", "translate_to_#{lan}"
   end
 
   private
