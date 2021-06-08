@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    translate_self (0.7.0)
+    translate_self (0.8.0)
       deepl-rb
 
 GEM

@@ -31,3 +31,7 @@ Seems like you need to update it by hand!
 ## [0.7.0] - 2021-06-08
 
 - Get rid of duplicated code. Update `benchmark.rb`.
+
+## [0.8.0] - 2021-06-08
+
+- Add option to use the shorter `t_to_language_code` alias. 
