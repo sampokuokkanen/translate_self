@@ -27,3 +27,7 @@ Seems like you need to update it by hand!
 ## [0.6.0] - 2021-06-08
 
 - Add option to use ENV variable DEEPL_HOST
+
+## [0.7.0] - 2021-06-08
+
+- Get rid of duplicated code. Update `benchmark.rb`.
