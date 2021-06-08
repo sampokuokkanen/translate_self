@@ -31,6 +31,13 @@ Now you can translate it to your language of chose with this gem!
 # 世界よ、ハローだ
 ```
 
+What's even better is that you can also save some typing by using the shortened alias such as below:
+
+```ruby
+"hello world".t_to_ja # or t_to_fi, t_to_ru... endless possibilities!
+# 世界よ、ハローだ
+```
+
 This gem uses the wonderful DeepL for Ruby as its backend.
 
 https://github.com/wikiti/deepl-rb

@@ -33,7 +33,7 @@ module Translation
     replace translate
   end
 
-  # Translates the string itself to a language the user wants to translate it to. \
+  # Translates the string itself to a language the user wants to translate it to.
   # Sample usage:
   # 'hello'.translate_to_fi
   # # Hei
@@ -44,6 +44,7 @@ module Translation
     define_method("translate_to_#{lan}") do |language = lan|
       call_deepl(self, self.language, language)
     end
+    alias_method "t_to_#{lan}", "translate_to_#{lan}"
   end
 
   private
