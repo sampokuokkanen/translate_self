@@ -47,6 +47,18 @@ RSpec.describe TranslateSelf do
     it 'does something useful' do
       expect(@hello.translate_to_ja).to match(/こんにち/)
     end
+
+    it 'can break up text to sentences properly' do
+      str = File.read('spaghetti.txt')
+      sentences = str.send :break_text_into_sentences
+      expect(sentences[-1]).to include 'email newsletter to hear about new eBooks.'
+    end
+
+    # EXPENSIVE TEST!!
+    # it 'can translate strings over 30kb' do
+    #   str = File.read('spaghetti.txt')
+    #   expect(str.to_fi).to include 'VAIMONI ON LOISTAVA JOHTAJA. HÄNEN SPAGETTIATERIANSA OVAT MENESTYS'
+    # end
   end
 
   describe 'TranslatableString' do

@@ -1,8 +1,8 @@
 require 'benchmark'
 
-n = 5000000
+n = 5_000_000
 Benchmark.bmbm do |x|
-  x.report("normal string") do
+  x.report('normal string') do
     n.times do
       'hello'
     end

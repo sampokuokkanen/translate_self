@@ -18,7 +18,7 @@ module Translation
   # # 'Hei'
   # @return [String] a new and shiny translated string!
   def translate
-    call_deepl(self, language, to_language)
+    call_deepl(language, to_language)
   end
 
   # Replaces self with the translation. \
@@ -42,17 +42,42 @@ module Translation
   # @return [String] the contents translated to another language
   @@languages.each do |lan|
     define_method("translate_to_#{lan}") do |language = lan|
-      call_deepl(self, self.language, language)
+      call_deepl(self.language, language)
     end
     alias_method "to_#{lan}", "translate_to_#{lan}"
   end
 
   private
 
-  def call_deepl(text, language = self.language, to_lan = to_language)
-    warn 'No language given!' and return if to_lan.nil?
+  def break_up(to_lan)
+    sentences = break_text_into_sentences
+    sentences.length.times.map.with_index do |_i, i|
+      sentences[i].send "translate_to_#{to_lan}"
+    end.join(' ')
+  end
 
-    response = DeepL.translate text, language, to_lan
+  def break_text_into_sentences
+    last_letter = if self[-1] == '.'
+                    '.'
+                  else
+                    ''
+                  end
+    tr_count = (bytesize / 25_000.to_f).ceil
+    sentences = split('.')
+    number_of_sentences = sentences.length / tr_count
+    current_count = 0
+    tr_count.times.map do |num|
+      txt = sentences[current_count..(current_count + number_of_sentences)].join('.')
+      current_count += number_of_sentences.next
+      txt + last_letter if num == tr_count.pred
+    end
+  end
+
+  def call_deepl(language = self.language, to_lan = to_language)
+    warn 'No language given!' and return if to_lan.nil?
+    return break_up(to_lan) if bytesize > 30_000
+
+    response = DeepL.translate self, language, to_lan
     self.language = response.detected_source_language.downcase if self.language.nil? && !frozen?
     actual_translation = response.text
     actual_translation.language = to_lan
