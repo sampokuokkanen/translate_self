@@ -40,3 +40,10 @@ Seems like you need to update it by hand!
 
 # Breaking change from 0.8!
 - `t_to_language_code` was too much typing, so changed it to `to_language_code`. 
+
+## [1.0.0] - 2021-06-11
+
+- Refactored the translation part a bit. 
+- Now you can translate strings that are over 30 kilobyte! 
+  I couldn't test this too much because of the limits on the free plan, 
+  but if you can test this feature, I'd be really happy to hear how it is working for you. 
