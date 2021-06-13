@@ -59,11 +59,12 @@ Or install it yourself as:
 
     $ gem install translate_self
 
+
+## Supported languages:
+
+Supported languages are: Bulgarian, Chinese, Czech, Danish, Dutch, English, Estonian, Finnish, French, German, Greek, Hungarian, Italian, Japanese, Latvian, Lithuanian, Polish, Portuguese, Romanian, Russian, Slovak, Slovenian, Spanish, and Swedish.
+
 ## Usage
-
-Currently available languages:
-
-[:bg, :cs, :da, :de, :el, :en, :es, :et, :fi, :fr, :hu, :it, :ja, :lt, :lv, :nl, :pl, :pt, :ro, :ru, :sk, :sl, :sv, :zh]
 
 You can assign a string a language:
 
