@@ -47,3 +47,8 @@ Seems like you need to update it by hand!
 - Now you can translate strings that are over 30 kilobyte! 
   I couldn't test this too much because of the limits on the free plan, 
   but if you can test this feature, I'd be really happy to hear how it is working for you. 
+
+## [1.0.1] - 2021-07-13
+
+- I'm reading Polished Ruby, and I just learned that it's faster to pass symbols than strings sometimes, 
+so as this library is very performance-oriented, symbols it is! 
