@@ -41,10 +41,10 @@ module Translation
   # @param [String] the language to translate to, e.g. "fi"
   # @return [String] the contents translated to another language
   @@languages.each do |lan|
-    define_method("translate_to_#{lan}") do |language = lan|
+    define_method("translate_to_#{lan}".to_sym) do |language = lan|
       call_deepl(self.language, language)
     end
-    alias_method "to_#{lan}", "translate_to_#{lan}"
+    alias_method "to_#{lan}".to_sym, "translate_to_#{lan}".to_sym
   end
 
   private
