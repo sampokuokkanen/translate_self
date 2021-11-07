@@ -2,11 +2,20 @@ require 'deepl'
 
 # The part where the actual translation happens.
 module Translation
-  @@languages = %w[bg cs da de el en es et fi fr hu it ja lt lv nl pl pt ro ru sk sl sv zh].freeze
-  attr_accessor :language, :to_language
+  LANGUAGES = %w[bg cs da de el en es et fi fr hu it ja lt lv nl pl pt ro ru sk sl sv zh].freeze
+  attr_accessor :language
+
+  def to_language
+    @to_language || 'fi'
+  end
+
+  def to_language=(language)
+    defroster if needs_defrosting?
+    @to_language = LANGUAGES.include?(language) ? language : 'fi'
+  end
 
   def available_languages
-    @@languages
+    LANGUAGES
   end
 
   # Translates self to the desired language. \
@@ -30,6 +39,7 @@ module Translation
   # # 'Hei'
   # @return [String] self replaced with the new translation
   def translate!
+    defroster if needs_defrosting?
     replace translate
   end
 
@@ -40,7 +50,7 @@ module Translation
   #
   # @param [String] the language to translate to, e.g. "fi"
   # @return [String] the contents translated to another language
-  @@languages.each do |lan|
+  LANGUAGES.each do |lan|
     define_method("translate_to_#{lan}".to_sym) do |language = lan|
       call_deepl(self.language, language)
     end
@@ -48,6 +58,15 @@ module Translation
   end
 
   private
+
+  def needs_defrosting?
+    frozen? && TranslateSelf.defrost
+  end
+
+  def defroster
+    require 'defrost'
+    defrost
+  end
 
   def break_up(to_lan)
     sentences = break_text_into_sentences
@@ -57,11 +76,7 @@ module Translation
   end
 
   def break_text_into_sentences
-    last_letter = if self[-1] == '.'
-                    '.'
-                  else
-                    ''
-                  end
+    last_letter = last_letter_of_self
     tr_count = (bytesize / 25_000.to_f).ceil
     sentences = split('.')
     number_of_sentences = sentences.length / tr_count
@@ -69,8 +84,16 @@ module Translation
     tr_count.times.map do |num|
       txt = sentences[current_count..(current_count + number_of_sentences)].join('.')
       current_count += number_of_sentences.next
-      txt + last_letter if num == tr_count.pred
+      if num == tr_count.pred
+        txt + last_letter
+      else
+        txt
+      end
     end
+  end
+
+  def last_letter_of_self
+    end_with?('.') ? '.' : ''
   end
 
   def call_deepl(language = self.language, to_lan = to_language)
@@ -78,7 +101,7 @@ module Translation
     return break_up(to_lan) if bytesize > 30_000
 
     response = DeepL.translate self, language, to_lan
-    self.language = response.detected_source_language.downcase if self.language.nil? && !frozen?
+    self.language = response.detected_source_language.downcase if !frozen? || (needs_defrosting? && defroster)
     actual_translation = response.text
     actual_translation.language = to_lan
     actual_translation

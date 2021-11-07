@@ -29,9 +29,12 @@ Gem::Specification.new do |spec|
 
   # Uncomment to register a new dependency of your gem
   spec.add_dependency 'deepl-rb'
+  spec.add_dependency 'defrost', '~> 1.0'
+  spec.add_dependency 'dry-configurable', '~> 0.1.3'
   spec.add_development_dependency 'rake', '~> 13.0'
   spec.add_development_dependency 'rspec', '~> 3.2'
   spec.add_development_dependency 'rubocop', '~> 1.7'
+  spec.add_development_dependency 'rubocop-rspec'
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html

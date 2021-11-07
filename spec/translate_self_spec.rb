@@ -1,5 +1,5 @@
 RSpec.describe TranslateSelf do
-  before(:each) do
+  before do
     @hello = 'hello'
   end
 

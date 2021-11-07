@@ -1,3 +1,5 @@
+require: rubocop-rspec
+
 AllCops:
   TargetRubyVersion: 2.5
   NewCops: enable
@@ -13,8 +15,22 @@ Style/StringLiteralsInInterpolation:
 Style/FrozenStringLiteralComment:
   Enabled: false
 
+Metrics/BlockLength:
+  Exclude:
+    - '*.gemspec'
+    - 'spec/**/*'
+
 Layout/LineLength:
   Max: 120
 
 Style/AsciiComments:
+  Enabled: false
+
+RSpec/ExpectActual:
+  Enabled: false
+
+RSpec/InstanceVariable:
+  Enabled: false
+
+RSpec/MultipleExpectations:
   Enabled: false
