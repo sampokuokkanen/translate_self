@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    translate_self (2.0.0)
+    translate_self (2.0.1)
       deepl-rb
       defrost (~> 1.0)
       dry-configurable (~> 0.1.3)
