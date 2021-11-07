@@ -35,6 +35,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency 'rspec', '~> 3.2'
   spec.add_development_dependency 'rubocop', '~> 1.7'
   spec.add_development_dependency 'rubocop-rspec'
+  spec.add_development_dependency 'byebug'
 
   # For more information and examples about making a new gem, checkout our
   # guide at: https://bundler.io/guides/creating_gem.html
