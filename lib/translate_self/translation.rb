@@ -60,7 +60,7 @@ module Translation
   private
 
   def needs_defrosting?
-    frozen? && TranslateSelf.defrost
+    frozen? && TranslateSelf.defrosting
   end
 
   def defroster
