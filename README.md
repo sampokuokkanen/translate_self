@@ -106,7 +106,7 @@ hello.translate
 
 OR!
 Use it with [defrost](https://github.com/tenderlove/defrost)!
-By default, defrost is not loaded. You can turn this off by setting `TranslateSelf.defrost = true`, and after that, no need to worry about frozen strings!
+By default, defrost is not loaded. You can turn this on by setting `TranslateSelf.defrosting = true`, and after that, no need to worry about frozen strings!
 This will defrost strings if they're frozen. 
 Might be a bit slower, but it's worth it!
 Interesting debug sessions guaranteed. 

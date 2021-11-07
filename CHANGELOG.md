@@ -1,6 +1,6 @@
 ## [2.0.0] - 2021-11-07
 - Finally a way to get around those pesky frozen strings! 
-- By default, [defrost](https://github.com/tenderlove/defrost) is not loaded. You can turn this off by setting `TranslateSelf.defrost = true`.
+- By default, [defrost](https://github.com/tenderlove/defrost) is not loaded. You can turn this off by setting `TranslateSelf.defrosting = true`.
 - See `spec/frozen_strings_spec.rb` for more details and exciting ways of using it.
 - Using with frozen_string_literal: true is a great way to troll your coworkers. 
 

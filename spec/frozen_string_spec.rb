@@ -3,7 +3,7 @@
 RSpec.describe 'FrozenString' do
   describe 'Does some defrosting' do
     before do
-      TranslateSelf.config.defrost = true
+      TranslateSelf.config.defrosting = true
     end
 
     it 'can be used with frozen strings if defrosting' do
@@ -27,7 +27,7 @@ RSpec.describe 'FrozenString' do
 
   describe 'without defrosting' do
     it 'does not work if for some reason the user does not want to use defrost' do
-      TranslateSelf.config.defrost = false
+      TranslateSelf.config.defrosting = false
       str = 'Donatello'
       expect { str.to_language = 'fi' }.to raise_error(FrozenError)
     end
